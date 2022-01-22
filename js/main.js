@@ -1,5 +1,6 @@
 const btn  = document.getElementById('btn');
 const page = document.querySelector('#page');
+const h1 = document.querySelector('#h1');
 
 btn.addEventListener("click" , function(){
     
@@ -14,8 +15,6 @@ btn.addEventListener("click" , function(){
     var randomNumber2  = Math.floor( (Math.random()*10) );
     var randomNumber3  = Math.floor( (Math.random()*10) );
     
-    
-    
     var result = "#" +
         letters[randomLetter1]+
         randomNumber1+
@@ -24,9 +23,9 @@ btn.addEventListener("click" , function(){
         letters[randomLetter3]+
         randomNumber3;
     
-    
     page.style.backgroundColor = " " + result;
     console.log(result);
+    h1.innerHTML = result;
     
 });
 
