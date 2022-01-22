@@ -1,5 +1,5 @@
 const btn  = document.getElementById('btn');
-const body = document.body;
+const page = document.querySelector('#page');
 
 btn.addEventListener("click" , function(){
     
@@ -22,11 +22,10 @@ btn.addEventListener("click" , function(){
         letters[randomLetter2]+
         randomNumber2+
         letters[randomLetter3]+
-        randomNumber3
-                     ;
+        randomNumber3;
     
     
-    body.style.backgroundColor = " " + result;
+    page.style.backgroundColor = " " + result;
     console.log(result);
     
 });
