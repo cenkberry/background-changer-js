@@ -1,33 +1,30 @@
-const btn  = document.getElementById('btn');
+const btn = document.getElementById('btn');
+const stopbtn = document.getElementById('stopbtn');
 const page = document.querySelector('#page');
 const h1 = document.querySelector('#h1');
 
-btn.addEventListener("click" , function(){
-    
-    var letters = ["A","B","C","D","E","F"];
-    var result = [];
-    
-    var randomLetter1 = Math.floor( (Math.random()*5) );
-    var randomLetter2 = Math.floor( (Math.random()*5) );
-    var randomLetter3 = Math.floor( (Math.random()*5) );
-    
-    var randomNumber1  = Math.floor( (Math.random()*10) );
-    var randomNumber2  = Math.floor( (Math.random()*10) );
-    var randomNumber3  = Math.floor( (Math.random()*10) );
-    
-    var result = "#" +
-        letters[randomLetter1]+
-        randomNumber1+
-        letters[randomLetter2]+
-        randomNumber2+
-        letters[randomLetter3]+
-        randomNumber3;
-    
-    page.style.backgroundColor = " " + result;
-    console.log(result);
-    h1.innerHTML = result;
-    
+btn.addEventListener("click", function () {
+
+    const myInt = setInterval(function colorPicker() {
+
+        const letters = [0, 1, "A", 2, 3, "B", 4, 5, "C", 6, 7, "D", 8, 9, "F"];
+        let result = [];
+
+        for (let i = 0; i <= 5; i++)
+        {
+            let ranNum = Math.floor((Math.random() * 15));
+            result.push(letters[ranNum]);
+        }
+
+        result.unshift("#");
+        let sum = result.join('');
+
+        page.style.backgroundColor = " " + sum;
+        page.style.color = "#ffffff";
+        h1.innerHTML = sum;
+    }, 1000);
+
+    stopbtn.addEventListener("click", () => {
+        clearInterval(myInt);
+    });
 });
-
-
-
