@@ -3,7 +3,7 @@ const stopbtn = document.getElementById('stopbtn');
 const page = document.querySelector('#page');
 const h1 = document.querySelector('#h1');
 
-btn.addEventListener("click", function () {
+btn.addEventListener("click", () => {
 
     const myInt = setInterval(function colorPicker() {
 
